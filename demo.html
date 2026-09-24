@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo Classes and Pseudo Elements Lab</title>
+
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background:#f4f8ff;
+            margin:20px;
+        }
+
+        h1{
+            text-align:center;
+            color:darkblue;
+        }
+
+        h2{
+            background:navy;
+            color:white;
+            padding:8px;
+        }
+
+        section{
+            background:white;
+            padding:15px;
+            margin-bottom:20px;
+            border-radius:8px;
+            box-shadow:0 0 5px gray;
+        }
+
+        /* ================= PART A ================= */
+
+        /* 1. Link before visited = Orange */
+        .link-demo a:link{
+            color:orange;
+            font-size:20px;
+        }
+
+        /* Link after visited = Red */
+        .link-demo a:visited{
+            color:red;
+        }
+    
+
+        /* 2. First line styling */
+        .first-line::first-line{
+            color:blue;
+            font-size:22px;
+            font-weight:bold;
+        }
+
+        /* 3. First letter styling */
+        .first-letter::first-letter{
+            color:green;
+            font-size:40px;
+            font-weight:bold;
+        }
+
+        /* 4. Selected text background */
+        .selection::selection{
+            background:yellow;
+            color:black;
+        }
+
+        /* 5. Mouse hover effect */
+        .hover-box{
+            background:lightblue;
+            padding:15px;
+            width:250px;
+            text-align:center;
+            transition:0.3s;
+        }
+
+        .hover-box:hover{
+            background:purple;
+            color:white;
+            font-size:22px;
+        }
+
+        /* ================= PART B ================= */
+
+        /* 1. Hover links only inside container */
+        .menu a{
+            color:blue;
+            text-decoration:none;
+            margin-right:15px;
+            font-size:18px;
+        }
+
+        .menu a:hover{
+            color:white;
+            background:green;
+            padding:5px 10px;
+            border-radius:5px;
+        }
+
+        /* 2. Input focus */
+        input:focus{
+            border:3px solid blue;
+            background:lightyellow;
+            outline:none;
+        }
+
+        /* 3. Table row hover */
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:10px;
+        }
+
+        table, th, td{
+            border:1px solid black;
+        }
+
+        th{
+            background:darkblue;
+            color:white;
+            padding:10px;
+        }
+
+        td{
+            padding:10px;
+        }
+
+        tr:hover{
+            background:lightgreen;
+        }
+
+        /* ================= PART C ================= */
+
+        /* 1. Valid / Invalid */
+        input:valid{
+            border:2px solid green;
+        }
+
+        input:invalid{
+            border:2px solid red;
+        }
+
+        /* 2. Active button */
+        .btn{
+            background:orange;
+            color:white;
+            padding:12px 20px;
+            border:none;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        .btn:active{
+            background:red;
+            transform:scale(0.95);
+        }
+
+        /* 3. Accessibility Focus */
+        .focus-demo{
+            padding:10px;
+            border:2px solid gray;
+            margin-top:10px;
+        }
+
+        .focus-demo:focus{
+            border:3px solid purple;
+            background:#efe2ff;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Pseudo Classes and Pseudo Elements Lab</h1>
+
+<!-- ================= PART A ================= -->
+
+<section>
+    <h2>Part A</h2>
+
+    <h3>1. Link Before Visited Orange and After Visited Red</h3>
+    <div class="link-demo">
+        <a href="https://www.google.com" target="_blank">Visit Google</a>
+    </div>
+
+    <h3>2. Style First Line of Paragraph</h3>
+    <p class="first-line">
+        Web Designing is an important subject for creating websites. CSS pseudo-elements help style specific parts of text without adding extra HTML elements. This paragraph demonstrates the first-line pseudo-element.
+    </p>
+
+    <h3>3. Style First Letter of Paragraph</h3>
+    <p class="first-letter">
+        Cascading Style Sheets make web pages attractive and responsive. The first letter is styled differently using a pseudo-element.
+    </p>
+
+    <h3>4. Highlight Selected Text</h3>
+    <p class="selection">
+        Select this text using your mouse. The selected portion will have a yellow background color and black text.
+    </p>
+
+    <h3>5. Hover Effect on Element</h3>
+    <div class="hover-box">
+        Move Mouse Over Me
+    </div>
+</section>
+
+<!-- ================= PART B ================= -->
+
+<section>
+    <h2>Part B</h2>
+
+    <h3>1. Hover Links Only Inside Container</h3>
+
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Gallery</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <h3>2. Input Fields on Focus</h3>
+
+    <form>
+        <label>Name:</label><br>
+        <input type="text" placeholder="Enter Name"><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" placeholder="Enter Email"><br><br>
+
+        <label>Password:</label><br>
+        <input type="password" placeholder="Enter Password">
+    </form>
+
+    <h3>3. Highlight Table Rows on Hover</h3>
+
+    <table>
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>City</th>
+        </tr>
+
+        <tr>
+            <td>101</td>
+            <td>Pal</td>
+            <td>Rajkot</td>
+        </tr>
+
+        <tr>
+            <td>102</td>
+            <td>Riya</td>
+            <td>Ahmedabad</td>
+        </tr>
+
+        <tr>
+            <td>103</td>
+            <td>Aman</td>
+            <td>Surat</td>
+        </tr>
+
+        <tr>
+            <td>104</td>
+            <td>Krisha</td>
+            <td>Vadodara</td>
+        </tr>
+    </table>
+
+</section>
+
+<!-- ================= PART C ================= -->
+
+<section>
+
+    <h2>Part C</h2>
+
+    <h3>1. Valid and Invalid Input Fields</h3>
+
+    <form>
+
+        <label>Email (Valid / Invalid)</label><br>
+        <input type="email" placeholder="Enter valid email" required><br><br>
+
+        <label>Phone (10 Digits)</label><br>
+        <input type="text" pattern="[0-9]{10}" placeholder="Enter 10 digit number" required><br><br>
+
+    </form>
+
+    <h3>2. Active Button</h3>
+
+    <button class="btn">Click Me</button>
+
+    <h3>3. Focus for Accessibility</h3>
+
+    <p>Press the <b>Tab</b> key to focus the input below.</p>
+
+    <input type="text" class="focus-demo" placeholder="Keyboard Focus Example">
+
+</section>
+
+</body>
+</html>
